@@ -46,11 +46,13 @@ Replace `your_login` with your actual 42 login.
 
 From the project root directory:
 
-make
+`make`
 
 Or manually:
 
-make build make up
+`make build`
+
+`make up`
 
 ------------------------------------------------------------------------
 
@@ -105,15 +107,15 @@ https://your_login.42.fr/wp-admin
 
 Stop containers:
 
-make down
+`make down`
 
 Remove containers and volumes:
 
-make clean
+`make clean`
 
 Full reset (including images):
 
-make fclean
+`make fclean`
 
 ------------------------------------------------------------------------
 
@@ -153,7 +155,9 @@ This ensures:
 
 To fully rebuild the infrastructure:
 
-make fclean make
+`make fclean`
+
+`make`
 
 This will recreate everything automatically.
 

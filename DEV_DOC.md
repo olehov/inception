@@ -46,8 +46,6 @@ The infrastructure must:
 
 Containers communicate using Docker's internal DNS through service
 names.
-Containers communicate using Docker's internal DNS through service
-names.
 
 ------------------------------------------------------------------------
 
@@ -91,7 +89,7 @@ Two named volumes are used:
 
 Mapped to:
 
-/home/`<login>`/data/
+/home/<username>/data/
 
 Ensures persistence and survives container recreation and VM reboot.
 
@@ -241,7 +239,7 @@ This project respects all mandatory constraints:
 -   Dedicated network
 -   HTTPS only
 -   Two WordPress users created
--   Persistent volumes inside /home/`<login>`/data
+-   Persistent volumes inside /home/<username>/data
 -   Makefile used for orchestration
 
 ------------------------------------------------------------------------

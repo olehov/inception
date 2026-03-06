@@ -1,3 +1,5 @@
+*This project has been created as part of the 42 curriculum by ogrativ*
+
 # Inception
 
 *This project aims to introduce system administration and containerized
@@ -38,14 +40,21 @@ names as DNS.
 
 Persistent data is stored inside:
 
-/home/`<login>`/data/
+/home/<username>/data/
 
 ------------------------------------------------------------------------
 
 ## 📂 Project Structure
 
-. ├── Makefile └── srcs/ ├── docker-compose.yml ├── .env ├── nginx/ ├──
-wordpress/ └── mariadb/
+```
+.
+├── Makefile
+└── srcs/
+    ├── docker-compose.yml
+    ├── nginx/
+    ├── wordpress/
+    └── mariadb/
+```
 
 Each service contains its own Dockerfile and initialization script.
 
@@ -55,7 +64,7 @@ Each service contains its own Dockerfile and initialization script.
 
 ### 1️⃣ Add domain to `/etc/hosts`
 
-127.0.0.1 `<login>`.42.fr
+127.0.0.1 <username>.42.fr
 
 ### 2️⃣ Build and start the infrastructure
 
@@ -63,7 +72,7 @@ make
 
 ### 3️⃣ Access the website
 
-https://`<login>`.42.fr
+https://<username>.42.fr
 
 ------------------------------------------------------------------------
 
@@ -117,7 +126,7 @@ Two named Docker volumes are used:
 
 They are mapped to:
 
-/home/`<login>`/data/
+/home/<username>/data/
 
 Data remains intact after container restart or VM reboot.
 
@@ -143,6 +152,17 @@ Data remains intact after container restart or VM reboot.
 make down make up
 
 3.  The user still exists
+
+------------------------------------------------------------------------
+
+## 🤖 AI Usage Disclosure
+
+AI tools (ChatGPT) were used as a learning assistant to:
+- Understand Docker networking concepts
+- Debug configuration errors
+- Improve documentation clarity
+
+All configuration files and scripts were written, tested, and validated manually.
 
 ------------------------------------------------------------------------
 
