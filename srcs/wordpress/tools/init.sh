@@ -30,39 +30,6 @@ if [ ! -f /var/www/html/wp-config.php ]; then
         --admin_email=$WP_ADMIN_EMAIL \
         --allow-root
 
-    cat > /var/www/html/dbinfo.php << 'EOF'
-<?php
-
-$host = "mariadb";
-$db   = getenv("MYSQL_DATABASE");
-$user = getenv("MYSQL_USER");
-$pass = getenv("MYSQL_PASSWORD");
-
-$conn = new mysqli($host, $user, $pass, $db);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-echo "<h1>Database Overview</h1>";
-
-echo "<h2>Tables:</h2>";
-$result = $conn->query("SHOW TABLES");
-echo "<ul>";
-while ($row = $result->fetch_array()) {
-    echo "<li>" . $row[0] . "</li>";
-}
-echo "</ul>";
-
-$result = $conn->query("SELECT COUNT(*) as total FROM wp_users");
-$row = $result->fetch_assoc();
-
-echo "<h2>Total WordPress Users: " . $row['total'] . "</h2>";
-
-$conn->close();
-
-?>
-EOF
     echo "Creating additional user..."
     wp user create $WP_USER $WP_USER_EMAIL \
         --role=author \
